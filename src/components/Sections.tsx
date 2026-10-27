@@ -100,7 +100,7 @@ function ServiceCard({ s, i }: { s: Service; i: number }) {
   return (
     <TiltCard className="svc-card">
       <div className="svc-img" id={`svc-${s.slug}`}>
-        <img src={s.img} alt={s.title} loading="lazy" />
+        <img src={s.img} alt={s.title} loading="lazy" style={s.focus ? { objectPosition: s.focus } : undefined} />
       </div>
       <div className="spot" />
       <span className="svc-num">{String(i + 1).padStart(2, '0')}</span>

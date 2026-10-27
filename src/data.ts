@@ -26,7 +26,7 @@ export const NAV = [
   { id: 'contact', label: 'Contact' },
 ]
 
-export type Service = { slug: string; title: string; kicker: string; text: string; img: string; points: string[] }
+export type Service = { slug: string; title: string; kicker: string; text: string; img: string; points: string[]; focus?: string }
 
 export const SERVICES: Service[] = [
   {
@@ -55,11 +55,12 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'vip',
-    title: 'VIP Protection & Escorts',
-    kicker: 'Close Protection',
-    text: 'Discreet personal security officers and escort teams for VIPs, celebrities, executives and high-value movements.',
-    img: asset('img/svc-vip.jpg'),
-    points: ['Personal security officers', 'Security escort services', 'Covert services'],
+    title: 'VVIP Security & Executive Protection',
+    kicker: 'VVIP · Luxury Escort',
+    text: 'PSO / gunman services, professional bodyguards and luxury vehicle escorts for VVIPs, celebrities and executives.',
+    img: asset('img/svc-vvip-night.jpg'),
+    focus: 'left center', // keep the lead bodyguard and Defender in frame
+    points: ['PSO / gunman services & bodyguards', 'Escort fleet — Defender, BMW, Mercedes, Innova, Thar', 'VVIP & executive protection'],
   },
   {
     slug: 'equipment',
