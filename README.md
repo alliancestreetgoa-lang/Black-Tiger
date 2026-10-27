@@ -53,12 +53,23 @@ Tested headless at 320, 360, 375, 390, 412, 430 (phones), 844×390 (phone landsc
 - ≤ 1100px: nav collapses to the full-screen menu (2 columns on short screens).
 - ≥ 1800px: wider container (1640px) and larger type/cards.
 
-## Deployment (GitHub Pages)
+## Deployment
 
-Every push to `main` builds and deploys automatically via `.github/workflows/deploy.yml`.
-Live URL: https://alliancestreetgoa-lang.github.io/Black-Tiger/
+### Netlify (recommended)
 
-The build uses the base path `/Black-Tiger/` (see `vite.config.ts`). To serve from a custom domain such as blacktigergoa.com, set the repository variable or build env `BASE_PATH=/`, add a `public/CNAME` file containing the domain, and point the domain's DNS at GitHub Pages.
+Everything is configured in `netlify.toml` — no settings to type in.
+
+1. Netlify → **Add new site → Import an existing project → GitHub** → pick `vvernekar123-pixel/Black-Tiger`.
+2. Netlify reads `netlify.toml`: build `npm run build`, publish `dist`, Node 22, `BASE_PATH=/`. Click **Deploy**.
+3. Every push to `main` redeploys. Pull requests get preview links automatically.
+4. Custom domain (e.g. blacktigergoa.com): **Domain management → Add a domain**, then point the DNS records Netlify shows. HTTPS is issued automatically.
+
+`netlify.toml` also sets long-term caching for the hashed `/assets/*` files, a week for `/img/*`, basic security headers, and a fallback so unknown URLs open the home page.
+
+### GitHub Pages (also set up)
+
+`.github/workflows/deploy.yml` builds and publishes `main` to https://vvernekar123-pixel.github.io/Black-Tiger/ (Settings → Pages → Source: GitHub Actions). Pages builds use the base path `/Black-Tiger/`; Netlify builds use `/` via `BASE_PATH`.
+If the site moves fully to Netlify, the Pages workflow can be deleted.
 
 ## Gallery
 
