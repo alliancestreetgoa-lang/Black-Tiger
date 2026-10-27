@@ -30,9 +30,8 @@ npm run preview
 
 ## Logo files
 
-- `brand/logo-original.png` — the logo as supplied.
-- `public/img/logo-dark.png` — dark-site version: white banner strip turned black with silver edge, brighter red text, grey side wings and drop-shadow removed. Used everywhere on the site.
-- `public/img/logo-mark.png`, `favicon.png` — small sizes. Full-resolution dark version: `brand/logo-dark-full.png`.
+- `brand/logo-original.png` — the client's logo as supplied (BT LLP.png). This is the only logo used on the site; it is never recoloured.
+- `public/img/logo-bt.png` (640px), `logo-bt-sm.png` (160px), `favicon-bt.png`, `apple-touch-bt.png` — web sizes made from it.
 
 ## Images
 

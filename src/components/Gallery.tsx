@@ -119,7 +119,7 @@ function Lightbox({ list, index, setIndex }: { list: GalleryItem[]; index: numbe
         <span className="lb-count">
           {String(index + 1).padStart(2, '0')} <i>/</i> {String(list.length).padStart(2, '0')}
         </span>
-        <img className="lb-logo" src={asset('img/logo-mark.png')} alt="" />
+        <img className="lb-logo" src={asset('img/logo-bt-sm.png')} alt="" />
         <button type="button" className="lb-btn" aria-label="Close" onClick={() => setIndex(null)}>
           <Icon.close />
         </button>

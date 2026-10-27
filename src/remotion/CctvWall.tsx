@@ -121,7 +121,7 @@ export const CctvWall: React.FC = () => {
         LIVE · BLACK TIGER COMMAND
       </div>
       {/* logo watermark */}
-      <Img src={asset('img/logo-dark.png')} style={{ position: 'absolute', right: 20, top: 14, width: 64, opacity: 0.9 }} />
+      <Img src={asset('img/logo-bt.png')} style={{ position: 'absolute', right: 20, top: 14, width: 64, opacity: 0.9 }} />
       {/* vignette */}
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(120% 90% at 50% 50%, transparent 60%, rgba(0,0,0,0.65))' }} />
     </AbsoluteFill>

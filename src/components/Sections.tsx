@@ -49,7 +49,7 @@ export function About() {
             <motion.img src={asset('img/about.jpg')} alt="Black Tiger security team briefing" loading="lazy" style={{ y: imgY }} />
           </motion.div>
           <motion.div className="badge" style={{ y: badgeY, rotate: badgeR }}>
-            <img src={asset('img/logo-dark.png')} alt="" />
+            <img src={asset('img/logo-bt.png')} alt="" />
             <b>Est. {COMPANY.since}</b>
           </motion.div>
         </div>
@@ -105,7 +105,7 @@ function ServiceCard({ s, i }: { s: Service; i: number }) {
       <div className="spot" />
       <span className="svc-num">{String(i + 1).padStart(2, '0')}</span>
       <span className="chip">
-        <img src={asset('img/logo-mark.png')} alt="" />
+        <img src={asset('img/logo-bt-sm.png')} alt="" />
       </span>
       <div className="svc-body">
         <span className="svc-kicker">{s.kicker}</span>
@@ -164,7 +164,7 @@ function HorizontalServices() {
             <ServiceCard s={s} i={i} key={s.slug} />
           ))}
           <div className="svc-end">
-            <img src={asset('img/logo-dark.png')} alt="" style={{ width: 110 }} />
+            <img src={asset('img/logo-bt.png')} alt="" style={{ width: 110 }} />
             <h3>
               Need a <span className="red-text">custom</span> plan?
             </h3>
@@ -453,7 +453,7 @@ export function Clients() {
         {CLIENTS.slice(0, half).map((c) => (
           <span className="marquee-item" key={c}>
             {c}
-            <img src={asset('img/logo-mark.png')} alt="" style={{ width: 34 }} />
+            <img src={asset('img/logo-bt-sm.png')} alt="" style={{ width: 34 }} />
           </span>
         ))}
       </Marquee>
@@ -461,7 +461,7 @@ export function Clients() {
         {CLIENTS.slice(half).map((c) => (
           <span className="marquee-item" key={c}>
             {c}
-            <img src={asset('img/logo-mark.png')} alt="" style={{ width: 34 }} />
+            <img src={asset('img/logo-bt-sm.png')} alt="" style={{ width: 34 }} />
           </span>
         ))}
       </Marquee>
@@ -720,7 +720,7 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <img className="footer-logo" src={asset('img/logo-dark.png')} alt="Black Tiger Security Solutions LLP" />
+            <img className="footer-logo" src={asset('img/logo-bt.png')} alt="Black Tiger Security Solutions LLP" />
             <p className="muted" style={{ maxWidth: 320, margin: 0 }}>
               {COMPANY.name}. Goa’s largest network of security operations — protecting people, property and events since {COMPANY.since}.
             </p>

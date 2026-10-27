@@ -118,13 +118,13 @@ export const ShieldHud: React.FC = () => {
           transform: `translate(-50%, -50%) scale(${pulse})`,
           filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.8)) drop-shadow(0 0 40px rgba(227,22,31,0.25))',
           overflow: 'hidden',
-          WebkitMaskImage: `url(${asset('img/logo-dark.png')})`,
+          WebkitMaskImage: `url(${asset('img/logo-bt.png')})`,
           WebkitMaskSize: '100% 100%',
-          maskImage: `url(${asset('img/logo-dark.png')})`,
+          maskImage: `url(${asset('img/logo-bt.png')})`,
           maskSize: '100% 100%',
         }}
       >
-        <Img src={asset('img/logo-dark.png')} style={{ width: '100%', display: 'block' }} />
+        <Img src={asset('img/logo-bt.png')} style={{ width: '100%', display: 'block' }} />
         <div
           style={{
             position: 'absolute',

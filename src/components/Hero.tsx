@@ -103,7 +103,7 @@ export function Hero({ ready }: { ready: boolean }) {
             <a href={`#svc-${s.slug}`} className="marquee-item" key={s.slug}>
               <img src={s.img} alt="" loading="lazy" />
               {s.title}
-              <img className="marquee-sep" src={asset('img/logo-mark.png')} alt="" />
+              <img className="marquee-sep" src={asset('img/logo-bt-sm.png')} alt="" />
             </a>
           ))}
         </Marquee>

@@ -29,7 +29,7 @@ export function Loader({ onDone }: { onDone: () => void }) {
           transition={{ duration: 1.1, ease }}
           style={{ transformPerspective: 900 }}
         >
-          <img src={asset('img/logo-dark.png')} alt="Black Tiger Security Solutions LLP" />
+          <img src={asset('img/logo-bt.png')} alt="Black Tiger Security Solutions LLP" />
         </motion.div>
         <div className="loader-bar">
           <motion.span style={{ scaleX: n / 100 }} />
@@ -69,7 +69,7 @@ export function Nav({ active, ready }: { active: string; ready: boolean }) {
       >
         <div className="container nav-row">
           <a href="#top" className="brand" aria-label="Black Tiger Security — home" onClick={() => setOpen(false)}>
-            <img src={asset('img/logo-mark.png')} alt="" />
+            <img src={asset('img/logo-bt-sm.png')} alt="" />
             <span className="brand-text">
               <b>BLACK TIGER</b>
               <small>SECURITY SOLUTIONS LLP</small>
