@@ -21,6 +21,7 @@ export const NAV = [
   { id: 'sectors', label: 'Sectors' },
   { id: 'approach', label: 'Approach' },
   { id: 'clients', label: 'Clients' },
+  { id: 'gallery', label: 'Gallery' },
   { id: 'careers', label: 'Careers' },
   { id: 'contact', label: 'Contact' },
 ]
@@ -218,4 +219,29 @@ export const JOBS = [
     type: 'Full-time / Event-based',
     reqs: ['Fit and confident', 'Event or hospitality experience a plus', 'Good communication skills', 'Willing to work night events'],
   },
+]
+
+export type GalleryCategory = 'VIP Protection' | 'Venues & Hospitality' | 'Events & Bouncers' | 'Corporate'
+export type GalleryItem = { name: string; caption: string; category: GalleryCategory; w: number; h: number; video?: boolean }
+export type GalleryFilter = 'All' | 'Videos' | GalleryCategory
+
+export const GALLERY_FILTERS: GalleryFilter[] = ['All', 'Videos', 'VIP Protection', 'Venues & Hospitality', 'Events & Bouncers', 'Corporate']
+
+// Real deployments, in the order the client chose. Files live in public/img/gallery:
+// photos as <name>.jpg (full) + <name>-sm.jpg (thumbnail); videos as video-<name>.mp4 + video-<name>.jpg (poster).
+export const GALLERY: GalleryItem[] = [
+  { name: 'duo-red-door', caption: 'Male & female officers at a premium venue', category: 'Venues & Hospitality', w: 960, h: 1280 },
+  { name: 'vip-lobby-3', caption: 'VIP visit — lobby security and crowd control', category: 'VIP Protection', w: 1200, h: 1600 },
+  { name: 'vip-escort', caption: 'Close protection detail on the move', category: 'VIP Protection', w: 1200, h: 1600 },
+  { name: 'vip-lobby-2', caption: 'VIP arrival — perimeter and escort', category: 'VIP Protection', w: 1200, h: 1600 },
+  { name: 'womens-day', caption: 'Women in Security — our lady officers on duty', category: 'Venues & Hospitality', w: 464, h: 832, video: true },
+  { name: 'festival', caption: 'Festival crowd security', category: 'Events & Bouncers', w: 480, h: 800, video: true },
+  { name: 'vip-arrival', caption: 'Celebrity arrival — close protection', category: 'VIP Protection', w: 576, h: 1024, video: true },
+  { name: 'airport', caption: 'Airport crowd management for a celebrity visit', category: 'VIP Protection', w: 576, h: 1024, video: true },
+  { name: 'duo-reception', caption: 'Front-desk security with CCTV monitoring', category: 'Venues & Hospitality', w: 960, h: 1280 },
+  { name: 'duo-corporate-logo', caption: 'Corporate site security officers', category: 'Corporate', w: 900, h: 1600 },
+  { name: 'escape-team-1', caption: 'Venue security team on the door', category: 'Venues & Hospitality', w: 582, h: 1280 },
+  { name: 'bouncers-wedding', caption: 'Bouncer team at a wedding venue', category: 'Events & Bouncers', w: 1280, h: 853 },
+  { name: 'escape-team-2', caption: 'Night-time entrance security', category: 'Venues & Hospitality', w: 582, h: 1280 },
+  { name: 'officer-solo-logo', caption: 'Personal security officer on duty', category: 'Events & Bouncers', w: 899, h: 1600 },
 ]

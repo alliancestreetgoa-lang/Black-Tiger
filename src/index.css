@@ -2008,3 +2008,335 @@ a.c-card:hover {
     margin-bottom: 22px;
   }
 }
+
+/* ---------- gallery ---------- */
+.gallery {
+  background: radial-gradient(70% 50% at 50% 0%, rgba(227, 22, 31, 0.1), transparent 70%), var(--black);
+  overflow: hidden;
+}
+.gallery-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.g-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 40px 0 34px;
+}
+.g-filters button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--silver);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  isolation: isolate;
+  transition: color 0.3s, border-color 0.3s;
+}
+.g-filters button:hover {
+  color: var(--white);
+  border-color: rgba(227, 22, 31, 0.6);
+}
+.g-filters button.on {
+  color: #fff;
+  border-color: transparent;
+}
+.g-filters em {
+  font-style: normal;
+  font-size: 11px;
+  min-width: 22px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.g-pill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--red-hot), var(--red-deep));
+  box-shadow: 0 8px 26px -8px rgba(227, 22, 31, 0.7);
+}
+.g-grid {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+}
+.g-col {
+  display: grid;
+  gap: 16px;
+  will-change: transform;
+}
+.g-tile {
+  margin: 0;
+}
+.g-tile button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--carbon);
+  cursor: zoom-in;
+}
+.g-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease), filter 0.6s;
+  filter: saturate(0.92);
+}
+.g-tile button:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+.g-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(6, 7, 8, 0.88) 100%);
+  opacity: 0.75;
+  transition: opacity 0.5s;
+}
+.g-tile button:hover .g-shade {
+  opacity: 1;
+}
+.g-tile figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 16px 14px;
+  text-align: left;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 1.35;
+  transform: translateY(8px);
+  opacity: 0.92;
+  transition: transform 0.5s var(--ease), opacity 0.5s;
+}
+.g-tile button:hover figcaption {
+  transform: translateY(0);
+  opacity: 1;
+}
+.g-tile figcaption small,
+.lb-cap small {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red-hot);
+  margin-bottom: 4px;
+}
+.g-expand {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: rgba(6, 7, 8, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line-strong);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s, transform 0.5s var(--ease);
+}
+.g-expand svg {
+  width: 18px;
+  height: 18px;
+}
+.g-tile button:hover .g-expand {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(4, 5, 6, 0.94);
+  backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 14px clamp(12px, 3vw, 28px) 20px;
+  touch-action: pan-y;
+}
+.lb-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.lb-count {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--white);
+  font-size: 14px;
+}
+.lb-count i {
+  font-style: normal;
+  color: var(--red-hot);
+  margin: 0 4px;
+}
+.lb-logo {
+  width: 38px;
+}
+.lb-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line-strong);
+  transition: background 0.3s, border-color 0.3s;
+}
+.lb-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+.lb-btn svg {
+  width: 22px;
+  height: 22px;
+}
+.lb-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 12px 0;
+}
+.lb-img {
+  max-width: min(100%, 1200px);
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.9);
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.lb-prev,
+.lb-next {
+  position: absolute;
+  top: 50%;
+  margin-top: -24px;
+}
+.lb-prev {
+  left: clamp(10px, 2vw, 28px);
+}
+.lb-next {
+  right: clamp(10px, 2vw, 28px);
+}
+.lb-cap {
+  text-align: center;
+  color: var(--white);
+  font-size: 15px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .g-grid,
+  .g-col {
+    gap: 10px;
+  }
+  .g-tile button {
+    border-radius: 12px;
+  }
+  .g-tile figcaption {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .g-tile figcaption small {
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+  }
+  .g-expand {
+    display: none;
+  }
+  .g-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 28px calc(var(--gutter) * -1) 24px;
+    padding: 0 var(--gutter) 4px;
+    scrollbar-width: none;
+  }
+  .g-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .g-filters button {
+    flex-shrink: 0;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  .lb-prev,
+  .lb-next {
+    top: auto;
+    bottom: 64px;
+    margin-top: 0;
+  }
+}
+
+/* gallery videos */
+.g-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.g-play {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--red);
+  box-shadow: 0 6px 20px -4px rgba(227, 22, 31, 0.7);
+}
+.g-play svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px;
+}
+.lb-media {
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 0;
+  height: 100%;
+}
+.lb-media .lb-img {
+  max-height: 100%;
+}
+.lb-media video.lb-img {
+  background: #000;
+  cursor: default;
+}

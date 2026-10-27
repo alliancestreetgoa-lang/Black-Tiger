@@ -46,6 +46,31 @@ export const Icon = {
       <path d="M12 19V5M6 11l6-6 6 6" />
     </svg>
   ),
+  chevronLeft: (p: P) => (
+    <svg {...base(p)}>
+      <path d="m15 5-7 7 7 7" />
+    </svg>
+  ),
+  chevronRight: (p: P) => (
+    <svg {...base(p)}>
+      <path d="m9 5 7 7-7 7" />
+    </svg>
+  ),
+  play: (p: P) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...p}>
+      <path d="M8 5.5v13a.8.8 0 0 0 1.2.7l10.4-6.5a.8.8 0 0 0 0-1.4L9.2 4.8A.8.8 0 0 0 8 5.5Z" />
+    </svg>
+  ),
+  close: (p: P) => (
+    <svg {...base(p)}>
+      <path d="M6 6l12 12M18 6 6 18" />
+    </svg>
+  ),
+  expand: (p: P) => (
+    <svg {...base(p)}>
+      <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" />
+    </svg>
+  ),
   plus: (p: P) => (
     <svg {...base(p)}>
       <path d="M12 5v14M5 12h14" />

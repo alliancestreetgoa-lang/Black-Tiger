@@ -2,6 +2,7 @@ import { AnimatePresence, MotionConfig } from 'framer-motion'
 import Lenis from 'lenis'
 import { useCallback, useEffect, useState } from 'react'
 import { CursorGlow, Fab, Loader, Nav, ScrollProgress } from './components/Chrome'
+import { Gallery } from './components/Gallery'
 import { Hero } from './components/Hero'
 import { About, Careers, Clients, Command, Consultancy, Contact, CtaBand, Footer, Process, Sectors, Services, Stats, Values } from './components/Sections'
 import { NAV } from './data'
@@ -62,6 +63,7 @@ export default function App() {
         <Process />
         <Consultancy />
         <Clients />
+        <Gallery />
         <CtaBand />
         <Careers />
         <Contact />

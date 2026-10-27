@@ -60,3 +60,11 @@ Every push to `main` builds and deploys automatically via `.github/workflows/dep
 Live URL: https://alliancestreetgoa-lang.github.io/Black-Tiger/
 
 The build uses the base path `/Black-Tiger/` (see `vite.config.ts`). To serve from a custom domain such as blacktigergoa.com, set the repository variable or build env `BASE_PATH=/`, add a `public/CNAME` file containing the domain, and point the domain's DNS at GitHub Pages.
+
+## Gallery
+
+`src/components/Gallery.tsx` — masonry photo + video gallery with filters and a full-screen viewer (swipe / arrow keys / Esc).
+Items are listed in `GALLERY` in `src/data.ts`; files live in `public/img/gallery/`:
+photos as `<name>.jpg` + `<name>-sm.jpg`, videos as `video-<name>.mp4` + `video-<name>.jpg` (poster).
+Every photo has the client's original logo (`brand/logo-original.png`, colours untouched) in the top-right corner.
+Uniform logos on `duo-corporate-logo` and `officer-solo-logo` were added with ChatGPT; originals stay local in `brand/gallery-originals/` (git-ignored).
