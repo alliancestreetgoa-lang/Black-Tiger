@@ -234,7 +234,7 @@ export const GALLERY: GalleryItem[] = [
   { name: 'vip-lobby-3', caption: 'VIP visit — lobby security and crowd control', category: 'VIP Protection', w: 1200, h: 1600 },
   { name: 'vip-escort', caption: 'Close protection detail on the move', category: 'VIP Protection', w: 1200, h: 1600 },
   { name: 'vip-lobby-2', caption: 'VIP arrival — perimeter and escort', category: 'VIP Protection', w: 1200, h: 1600 },
-  { name: 'womens-day', caption: 'Women in Security — our lady officers on duty', category: 'Venues & Hospitality', w: 464, h: 832, video: true },
+  { name: 'womens-day-2', caption: 'Women in Security — our lady officers on duty', category: 'Venues & Hospitality', w: 464, h: 832, video: true },
   { name: 'festival', caption: 'Festival crowd security', category: 'Events & Bouncers', w: 480, h: 800, video: true },
   { name: 'vip-arrival', caption: 'Celebrity arrival — close protection', category: 'VIP Protection', w: 576, h: 1024, video: true },
   { name: 'airport', caption: 'Airport crowd management for a celebrity visit', category: 'VIP Protection', w: 576, h: 1024, video: true },
