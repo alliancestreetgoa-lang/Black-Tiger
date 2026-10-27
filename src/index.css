@@ -2340,3 +2340,44 @@ a.c-card:hover {
   background: #000;
   cursor: default;
 }
+
+/* "We're hiring" contact card */
+.c-hiring {
+  position: relative;
+  border-color: rgba(227, 22, 31, 0.45);
+  background: linear-gradient(110deg, rgba(227, 22, 31, 0.14), rgba(255, 255, 255, 0.02) 60%);
+}
+.c-hiring small {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--red-hot);
+}
+.hiring-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red-hot);
+  box-shadow: 0 0 0 0 rgba(255, 42, 51, 0.7);
+  animation: hiring-pulse 1.8s var(--ease) infinite;
+}
+@keyframes hiring-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 42, 51, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 42, 51, 0);
+  }
+}
+.c-go {
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  align-self: center;
+  flex-shrink: 0;
+  color: var(--red-hot);
+  transition: transform 0.4s var(--ease);
+}
+.c-hiring:hover .c-go {
+  transform: translateX(4px);
+}

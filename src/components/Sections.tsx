@@ -585,13 +585,16 @@ export function CtaBand() {
 }
 
 /* ---------------- contact ---------------- */
+const JOB_OPTION = 'Job application — we’re hiring'
+
 export function Contact() {
   const [sent, setSent] = useState(false)
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const f = new FormData(e.currentTarget)
+    const job = f.get('service') === JOB_OPTION
     const msg = [
-      'Hello Black Tiger Security, I would like a quote.',
+      job ? 'Hello Black Tiger Security, I would like to apply for a job.' : 'Hello Black Tiger Security, I would like a quote.',
       `Name: ${f.get('name')}`,
       `Phone: ${f.get('phone')}`,
       `Service: ${f.get('service')}`,
@@ -643,6 +646,18 @@ export function Contact() {
                 <span>Chat with our team</span>
               </div>
             </motion.a>
+            <motion.a className="c-card c-hiring" href="#careers" variants={fadeUp}>
+              <span className="ic">
+                <Icon.users />
+              </span>
+              <div>
+                <small>
+                  We’re hiring <i className="hiring-dot" aria-hidden />
+                </small>
+                <span>Security guards, officers & lady guards — join our team</span>
+              </div>
+              <Icon.arrow className="c-go" />
+            </motion.a>
             <motion.div className="c-card" variants={fadeUp}>
               <span className="ic">
                 <Icon.pin />
@@ -684,6 +699,7 @@ export function Contact() {
                     <option key={s.slug}>{s.title}</option>
                   ))}
                   <option>Security Consultancy & Risk</option>
+                  <option>{JOB_OPTION}</option>
                   <option>Something else</option>
                 </select>
               </div>
