@@ -2381,3 +2381,9 @@ a.c-card:hover {
 .c-hiring:hover .c-go {
   transform: translateX(4px);
 }
+
+/* careers apply form */
+.apply-form {
+  margin-top: 28px;
+  scroll-margin-top: 100px;
+}

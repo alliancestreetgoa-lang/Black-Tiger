@@ -470,8 +470,113 @@ export function Clients() {
 }
 
 /* ---------------- careers ---------------- */
+const EXPERIENCE = ['Fresher', 'Less than 1 year', '1–3 years', '3–5 years', '5+ years']
+const AVAILABILITY = ['Full-time', 'Part-time', 'Event-based / weekends']
+
+function ApplyForm({ position, setPosition }: { position: string; setPosition: (p: string) => void }) {
+  const [sent, setSent] = useState(false)
+  const submit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const f = new FormData(e.currentTarget)
+    const msg = [
+      'Hello Black Tiger Security, I would like to apply for a job.',
+      `Position: ${f.get('position')}`,
+      `Name: ${f.get('name')}`,
+      `Phone: ${f.get('phone')}`,
+      `Age: ${f.get('age') || '-'}`,
+      `Experience: ${f.get('experience')}`,
+      `Availability: ${f.get('availability')}`,
+      `Location: ${f.get('location') || '-'}`,
+      `About me: ${f.get('about') || '-'}`,
+    ].join('\n')
+    window.open(`${COMPANY.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener')
+    setSent(true)
+  }
+  return (
+    <Reveal delay={0.1}>
+      <form className="form apply-form" id="apply" onSubmit={submit}>
+        <h3>
+          Apply <span className="red-text">now</span>
+        </h3>
+        <p className="muted" style={{ margin: '8px 0 0' }}>
+          Fill this in and send it on WhatsApp — our recruitment team will call you back.
+        </p>
+        <div className="form-grid">
+          <div className="field">
+            <label htmlFor="a-name">Full name</label>
+            <input id="a-name" name="name" required autoComplete="name" />
+          </div>
+          <div className="field">
+            <label htmlFor="a-phone">Phone</label>
+            <input id="a-phone" name="phone" type="tel" required autoComplete="tel" />
+          </div>
+          <div className="field full">
+            <label htmlFor="a-position">Position</label>
+            <select id="a-position" name="position" value={position} onChange={(e) => setPosition(e.target.value)}>
+              {JOBS.map((j) => (
+                <option key={j.title}>{j.title}</option>
+              ))}
+              <option>Other / not sure</option>
+            </select>
+          </div>
+          <div className="field">
+            <label htmlFor="a-exp">Experience</label>
+            <select id="a-exp" name="experience" defaultValue={EXPERIENCE[0]}>
+              {EXPERIENCE.map((x) => (
+                <option key={x}>{x}</option>
+              ))}
+            </select>
+          </div>
+          <div className="field">
+            <label htmlFor="a-age">Age</label>
+            <input id="a-age" name="age" type="number" min={18} max={65} inputMode="numeric" />
+          </div>
+          <div className="field">
+            <label htmlFor="a-loc">Area in Goa</label>
+            <input id="a-loc" name="location" placeholder="e.g. Mapusa" />
+          </div>
+          <div className="field">
+            <label htmlFor="a-avail">Availability</label>
+            <select id="a-avail" name="availability" defaultValue={AVAILABILITY[0]}>
+              {AVAILABILITY.map((x) => (
+                <option key={x}>{x}</option>
+              ))}
+            </select>
+          </div>
+          <div className="field full">
+            <label htmlFor="a-about">About you</label>
+            <textarea id="a-about" name="about" placeholder="Previous security work, training, languages you speak…" />
+          </div>
+        </div>
+        <button className="btn btn-primary" type="submit">
+          <Icon.whatsapp /> Send application
+        </button>
+        <AnimatePresence>
+          {sent ? (
+            <motion.p key="sent" className="form-note" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+              WhatsApp opened with your application — press send, then share your ID and CV in the same chat.
+            </motion.p>
+          ) : (
+            <p className="form-note">You can share your ID proof and CV in the WhatsApp chat after sending.</p>
+          )}
+        </AnimatePresence>
+      </form>
+    </Reveal>
+  )
+}
+
 export function Careers() {
   const [open, setOpen] = useState(0)
+  const [position, setPosition] = useState(JOBS[0].title)
+  const applyFor = (title: string) => {
+    setPosition(title)
+    const form = document.getElementById('apply')
+    // layout position (ignores the reveal animation's transform), leaving room for the fixed nav bar
+    let y = 0
+    for (let el = form as HTMLElement | null; el; el = el.offsetParent as HTMLElement | null) y += el.offsetTop
+    if (form) window.scrollTo({ top: y - 100, behavior: 'smooth' })
+    window.setTimeout(() => (document.getElementById('a-name') as HTMLInputElement | null)?.focus({ preventScroll: true }), 700)
+  }
   return (
     <section className="section" id="careers">
       <div className="container careers-grid">
@@ -513,14 +618,9 @@ export function Careers() {
                               <li key={r}>{r}</li>
                             ))}
                           </ul>
-                          <a
-                            className="btn btn-primary"
-                            href={`${COMPANY.whatsapp}?text=${encodeURIComponent(`Hello Black Tiger, I would like to apply for the ${j.title} position.`)}`}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <Icon.whatsapp /> Apply on WhatsApp
-                          </a>
+                          <button type="button" className="btn btn-primary" onClick={() => applyFor(j.title)}>
+                            Apply now <Icon.arrow />
+                          </button>
                         </div>
                       </motion.div>
                     )}
@@ -529,6 +629,7 @@ export function Careers() {
               </Reveal>
             ))}
           </div>
+          <ApplyForm position={position} setPosition={setPosition} />
         </div>
       </div>
     </section>
@@ -646,7 +747,7 @@ export function Contact() {
                 <span>Chat with our team</span>
               </div>
             </motion.a>
-            <motion.a className="c-card c-hiring" href="#careers" variants={fadeUp}>
+            <motion.a className="c-card c-hiring" href="#apply" variants={fadeUp}>
               <span className="ic">
                 <Icon.users />
               </span>
