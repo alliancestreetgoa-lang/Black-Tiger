@@ -1,7 +1,7 @@
 import { asset } from './asset'
 
 export const COMPANY = {
-  name: 'Black Tiger Security Solutions LLP',
+  name: 'Black Tiger Security Service',
   short: 'Black Tiger',
   tagline: 'Your Safety. Our Responsibility.',
   since: 2012,

@@ -1,4 +1,4 @@
-# Black Tiger Security Solutions LLP — website
+# Black Tiger Security Service — website
 
 Rebuild of blacktigergoa.com. React + Vite + TypeScript, animated with Framer Motion, Lenis smooth scroll and two live Remotion compositions.
 
@@ -30,12 +30,13 @@ npm run preview
 
 ## Logo files
 
-- `brand/logo-original.png` — the client's logo as supplied (BT LLP.png). This is the only logo used on the site; it is never recoloured.
-- `public/img/logo-bt.png` (640px), `logo-bt-sm.png` (160px), `favicon-bt.png`, `apple-touch-bt.png` — web sizes made from it.
+- `brand/logo-original.png` — the client's logo as supplied (`BT Services.png`, 30 Oct 2026: silver shield, white banner reading "SECURITY SERVICE"). This is the only logo used on the site; it is never recoloured. It replaced the earlier "SECURITY SOLUTIONS LLP" banner logo everywhere — don't bring the old one back.
+- `public/img/logo-bt.png` (640px), `logo-bt-sm.png` (160px), `favicon-bt.png`, `apple-touch-bt.png` — web sizes made from it (alpha-trimmed, then resized).
 
 ## Images
 
-All photographs were generated with ChatGPT using the supplied logo as reference, so every guard wears the Black Tiger shield on the left chest. Originals (PNG) were downloaded to `~/Downloads/bt-*.png`; web JPEGs are in `public/img/`.
+All photographs were generated with ChatGPT using the supplied logo as reference, so every guard wears the Black Tiger shield (banner "SECURITY SERVICE") on the left chest. Originals (PNG) were downloaded to `~/Downloads/bt-*.png`; web JPEGs are in `public/img/`.
+The hero (`hero.jpg`) shows two officers: a woman centre-left and a man in front on the right; the left 40% stays dark for the headline.
 
 ## Contact form
 
@@ -76,5 +77,5 @@ If the site moves fully to Netlify, the Pages workflow can be deleted.
 `src/components/Gallery.tsx` — masonry photo + video gallery with filters and a full-screen viewer (swipe / arrow keys / Esc).
 Items are listed in `GALLERY` in `src/data.ts`; files live in `public/img/gallery/`:
 photos as `<name>.jpg` + `<name>-sm.jpg`, videos as `video-<name>.mp4` + `video-<name>.jpg` (poster).
-Every photo has the client's original logo (`brand/logo-original.png`, colours untouched) in the top-right corner.
+Every photo has the client's original logo (`brand/logo-original.png`, colours untouched) in the top-right corner, and the four videos carry it too (Women's Day: corner badge and the faint end-card watermark were also switched to "SECURITY SERVICE").
 Uniform logos on `duo-corporate-logo` and `officer-solo-logo` were added with ChatGPT; originals stay local in `brand/gallery-originals/` (git-ignored).

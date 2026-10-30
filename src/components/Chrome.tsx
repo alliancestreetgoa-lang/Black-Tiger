@@ -29,7 +29,7 @@ export function Loader({ onDone }: { onDone: () => void }) {
           transition={{ duration: 1.1, ease }}
           style={{ transformPerspective: 900 }}
         >
-          <img src={asset('img/logo-bt.png')} alt="Black Tiger Security Solutions LLP" />
+          <img src={asset('img/logo-bt.png')} alt="Black Tiger Security Service" />
         </motion.div>
         <div className="loader-bar">
           <motion.span style={{ scaleX: n / 100 }} />
@@ -68,11 +68,11 @@ export function Nav({ active, ready }: { active: string; ready: boolean }) {
         transition={{ duration: 0.9, ease, delay: 0.2 }}
       >
         <div className="container nav-row">
-          <a href="#top" className="brand" aria-label="Black Tiger Security — home" onClick={() => setOpen(false)}>
+          <a href="#top" className="brand" aria-label="Black Tiger Security Service — home" onClick={() => setOpen(false)}>
             <img src={asset('img/logo-bt-sm.png')} alt="" />
             <span className="brand-text">
               <b>BLACK TIGER</b>
-              <small>SECURITY SOLUTIONS LLP</small>
+              <small>SECURITY SERVICE</small>
             </span>
           </a>
           <nav className="nav-links" aria-label="Main">
@@ -154,7 +154,7 @@ export function Fab() {
       </AnimatePresence>
       <motion.a
         className="wa"
-        href={`${COMPANY.whatsapp}?text=${encodeURIComponent('Hello Black Tiger Security, I would like a security quote.')}`}
+        href={`${COMPANY.whatsapp}?text=${encodeURIComponent('Hello Black Tiger Security Service, I would like a security quote.')}`}
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"

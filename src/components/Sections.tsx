@@ -479,7 +479,7 @@ function ApplyForm({ position, setPosition }: { position: string; setPosition: (
     e.preventDefault()
     const f = new FormData(e.currentTarget)
     const msg = [
-      'Hello Black Tiger Security, I would like to apply for a job.',
+      'Hello Black Tiger Security Service, I would like to apply for a job.',
       `Position: ${f.get('position')}`,
       `Name: ${f.get('name')}`,
       `Phone: ${f.get('phone')}`,
@@ -695,7 +695,7 @@ export function Contact() {
     const f = new FormData(e.currentTarget)
     const job = f.get('service') === JOB_OPTION
     const msg = [
-      job ? 'Hello Black Tiger Security, I would like to apply for a job.' : 'Hello Black Tiger Security, I would like a quote.',
+      job ? 'Hello Black Tiger Security Service, I would like to apply for a job.' : 'Hello Black Tiger Security Service, I would like a quote.',
       `Name: ${f.get('name')}`,
       `Phone: ${f.get('phone')}`,
       `Service: ${f.get('service')}`,
@@ -837,7 +837,7 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <img className="footer-logo" src={asset('img/logo-bt.png')} alt="Black Tiger Security Solutions LLP" />
+            <img className="footer-logo" src={asset('img/logo-bt.png')} alt="Black Tiger Security Service" />
             <p className="muted" style={{ maxWidth: 320, margin: 0 }}>
               {COMPANY.name}. Goa’s largest network of security operations — protecting people, property and events since {COMPANY.since}.
             </p>
