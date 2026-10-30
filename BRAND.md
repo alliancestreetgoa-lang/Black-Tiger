@@ -45,3 +45,5 @@ Applies to everything made for this client: website, photos, videos, reels, post
 | Intro video (HyperFrames, 9:16 only) | edit `~/hyperframes-kit/video-projects/black-tiger-intro/build.py`, then `python3 build.py --vertical` and render in `black-tiger-intro-vertical` (never render the 16:9 project) |
 
 When you change any of these, check the others too, and update this file if a rule changes.
+
+After replacing any image or video in `public/`, bump `ASSET_VERSION` in `src/asset.ts` (and the `?v=` in `index.html`), or visitors keep the old file for up to a week (`/img/*` is cached for 7 days).
